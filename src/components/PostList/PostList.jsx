@@ -1,11 +1,11 @@
 import PostListItem from "../PostListItem"
 import "./PostList.css"
-const PostList = ({posts}) => {
+const PostList = ({posts, onDelete}) => {
     const elements = posts.map((element) => {
         const {id, ...itemProps} = element
         return (
             <li key={id} className="list-group-item">
-                <PostListItem {...itemProps}/>
+                <PostListItem {...itemProps} onDelete={() => onDelete(id)}/>
             </li>
         )
     })
