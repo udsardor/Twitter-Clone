@@ -19,7 +19,10 @@ export default class PostAddForm extends Component{
 
     onSubmit(e){
         e.preventDefault()
-        this.props.onAdd(this.state.value)
+        this.state.value.length === 0 ?
+        alert("should to write something") : this.props.onAdd(this.state.value)
+
+        
         this.setState({value: ""})
     }
 
